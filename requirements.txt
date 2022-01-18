@@ -51,7 +51,6 @@ simplegeneric==0.8.1
 sip==6.5.0
 Sphinx==4.2.0
 statsmodels==0.12.2
-# setuptools==60.5.0
 tables==3.6.1
 TBB==2021.4.0
 terminado==0.9.4

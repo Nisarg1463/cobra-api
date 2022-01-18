@@ -5,7 +5,8 @@ app = Flask(__name__)
 def return_request():
     d={}
     input_chr = int(request.args['query'])
-    answer = f'{input_chr**2}'
+    power = int(request.args['power'])
+    answer = f'{input_chr**power}'
     d['output'] = answer
     return jsonify(d)
 

@@ -26,12 +26,18 @@ def search():
     output['wolframalpha answers'] = wolframalpha_answers
 
     print(query)
-    page = wikipedia.page(query)
+    try:
+        page = wikipedia.page(query)
+    except:
+        page = None
     wiki_search_results = wikipedia.search(query)
     wikipedia_answers = {}
     wikipedia_answers['search'] = wiki_search_results
-    wikipedia_answers['page'] = {'title': page.title,
-                                 'content': page.content, 'summary': page.summary}
+    if page != None:
+        wikipedia_answers['page'] = {'title': page.title,
+                                    'content': page.content, 'summary': page.summary}
+    else:
+        wikipedia_answers['page'] = {'title':'page not found','content':'','summary':''}
     output['wikipedia answers'] = wikipedia_answers
 
     return jsonify(output)

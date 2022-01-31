@@ -17,7 +17,7 @@ def return_request():
 @app.route('/search', methods=['GET'])
 def search():
     output = {}
-    client = wolframalpha.Client('3HLRTJ-A7P8K5RQW8')
+    client = wolframalpha.Client('wolframalpha_key')
     query = str(request.args['query'])
     res = client.query(query)
     wolframalpha_answers = []
